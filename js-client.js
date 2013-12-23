@@ -8,10 +8,10 @@ function init() {
 
     ymaps.route([
         'Москва, улица Льва Толстого, 16',
-        'Москва, Хорошевское шоссе, 82к8'
+        'Москва, Хорошевское шоссе, 89'
     ]).then(function (route) {
         myMap.geoObjects.add(route);
-        var moveList = 'Трогаемся,</br>',
+        var jamMeter = 0,
             way,
             segments;
         // Получаем массив путей.
@@ -19,14 +19,11 @@ function init() {
             way = route.getPaths().get(i);
             segments = way.getSegments();
             for (var j = 0; j < segments.length; j++) {
-                var street = segments[j].getStreet();
-                moveList += ('Едем ' + segments[j].getHumanAction() + (street ? ' на ' + street : '') + ', проезжаем ' + segments[j].getLength() + ' м.,');
-                moveList += '</br>'
+                jamMeter += segments[j].getJamsTime();
             }
         }
-        moveList += 'Останавливаемся.';
         // Выводим маршрутный лист.
-        $('#list').append(moveList);
+        $('#list').append(Math.round(jamMeter / 60));
     }, function (error) {
         alert('Возникла ошибка: ' + error.message);
     });
