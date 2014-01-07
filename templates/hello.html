@@ -34,7 +34,8 @@ function init() {
             }
         }
         // Выводим маршрутный лист.
-        $('#list').append(Math.round(jamMeter / 60));
+        hours = Math.round(jamMeter / 60);
+        $('#list').append(hours);
     }, function (error) {
         alert('Возникла ошибка: ' + error.message);
     });

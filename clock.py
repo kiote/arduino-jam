@@ -6,7 +6,7 @@ sched = Scheduler()
 @sched.interval_schedule(minutes=10)
 def timed_job():
     conn = httplib.HTTPConnection("arduino-jam.herokuapp.com")
-    conn.request("GET", "/")
+    conn.request("POST", "/")
     r1 = conn.getresponse()
     print r1.status
 
