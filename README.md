@@ -1,10 +1,16 @@
 arduino-jam
 ===========
-Arduino jammer нужен чтобы показывать время в пути с учетом пробок из точки А в точку Б.
+Arduino jammer created to show drive-time from A to B traffic-jam time included.
 
-У проекта несколько частей:
+It consists of 4 parts:
 
-1. Железячная: arduino uno + LED screen
-2. Программка для ардуино, просто принимает данные, записываемые в порт и отображает их на экране
-3. JS-клиент к Yandex.Maps API. Запрашивает информацию по маршруту.
-4. Python-server. Дёргает клиента. Хранит информацию от клиента.
+1. Hardware: arduino uno + LED screen;
+2. Arduino program, gets data, putted to port and shows them at the screen;
+3. JS-client to Yandex.Maps API. Gets the info about route;
+4. Python-server. Saves the information from client;
+
+
+Sample app
+==========
+
+You can find sample app here: http://arduino-jam.herokuapp.com/
