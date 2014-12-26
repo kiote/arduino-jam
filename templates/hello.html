@@ -3,44 +3,11 @@
 <html>
 
 <head>
-    <title>Примеры. Построение маршрута</title>
+    <title>Arduino Jammer</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
     <script src="http://yandex.st/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-ymaps.ready(init);
-
-function init() {
-    var myMap = new ymaps.Map("map", {
-            center: [55.742362, 37.555551],
-            zoom: 11
-        });
-
-    ymaps.route([
-        'Москва, улица Льва Толстого, 16',
-        'Москва, Хорошевское шоссе, 89'
-    ]).then(function (route) {
-        myMap.geoObjects.add(route);
-        var jamMeter = 0,
-            way,
-            segments;
-        // Получаем массив путей.
-        for (var i = 0; i < route.getPaths().getLength(); i++) {
-            way = route.getPaths().get(i);
-            segments = way.getSegments();
-            for (var j = 0; j < segments.length; j++) {
-                jamMeter += segments[j].getJamsTime();
-            }
-        }
-        // Выводим маршрутный лист.
-        hours = Math.round(jamMeter / 60);
-        $('#list').append(hours);
-    }, function (error) {
-        alert('Возникла ошибка: ' + error.message);
-    });
-}
-</script>
+    <script src="js-client.js" type="text/javascript"></script>
 </head>
 
 <body>
