@@ -8,7 +8,7 @@ function init() {
 
     ymaps.route([
         'Москва, улица Льва Толстого, 16',
-        'Москва, Хорошевское шоссе, 89'
+        'Москва, Большой Златоустигский пер., 7, стр. 1'
     ]).then(function (route) {
         myMap.geoObjects.add(route);
         var jamMeter = 0,
