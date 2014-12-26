@@ -1,6 +1,6 @@
 arduino-jam
 ===========
-Arduino jammer created to show drive-time from A to B traffic-jam time included.
+Arduino Jammer aim to show drive-time from A to B with traffic-jam time included.
 
 It consists of 4 parts:
 
